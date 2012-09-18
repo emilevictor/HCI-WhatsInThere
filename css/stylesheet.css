@@ -1,5 +1,7 @@
 #phone {
-	margin:0px auto;
+	position:absolute;
+	top:100px;
+	left:100px;
 	width:328px;
 	height: 524px;
 	background-image:url('../images/background_phone.png');
@@ -8,7 +10,7 @@
 
 #header {
 
-	position:relative;
+	position:absolute;
 	background-image:url('../images/header_happy.png');
 	top:62px;
 	left:30px;
@@ -18,10 +20,49 @@
 }
 
 #contentPane {
-	position:relative;
-	top:92px;
-	left:30px;
+	position:absolute;
+	top:135px;
+	left:33px;
 	height:312px;
 	width:254px;
 }
 
+#beaconFoundFirstGuessPanel{
+	position:absolute;
+	top:0px;
+	left:2px;
+	height:312px;
+	width:254px;
+	z-index:1;
+
+}
+
+#changeRoomPanel {
+	position:absolute;
+	top:0px;
+	left:2px;
+	height:312px;
+	width:254px;
+	visibility:hidden;
+	z-index:2;
+}
+
+#informationForIndivClassPanel {
+	position:absolute;
+	top:0px;
+	left:2px;
+	height:312px;
+	width:254px;
+	visibility:hidden;
+	z-index:3;	
+}
+
+#wrongRoomMenuPanel {
+	position:absolute;
+	top:0px;
+	left:2px;
+	height:312px;
+	width:254px;
+	visibility:hidden;
+	z-index:4;
+}
