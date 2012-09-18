@@ -16,3 +16,12 @@
 	height:73px;
 
 }
+
+#contentPane {
+	position:relative;
+	top:92px;
+	left:30px;
+	height:312px;
+	width:254px;
+}
+
