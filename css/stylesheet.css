@@ -1,0 +1,18 @@
+#phone {
+	margin:0px auto;
+	width:328px;
+	height: 524px;
+	background-image:url('../images/background_phone.png');
+	background-color:#cccccc;
+}
+
+#header {
+
+	position:relative;
+	background-image:url('../images/header_happy.png');
+	top:62px;
+	left:30px;
+	width: 260px;
+	height:73px;
+
+}
