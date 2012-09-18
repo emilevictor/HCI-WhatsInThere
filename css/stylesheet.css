@@ -66,3 +66,28 @@
 	visibility:hidden;
 	z-index:4;
 }
+
+#iThinkYouAreIn
+{
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #ffffff;
+}
+
+#amIWrongButton
+{
+	margin:0px auto;
+	border-radius: 15px;
+	width:100px;
+	height:30px;
+	background-color:#FFFFFF;
+}
+
+#amIWrongText
+{
+	position:relative;
+	top:3px;
+	left:5px;
+	font-family: 'Source Sans Pro', sans-serif;
+	color:#000000;
+}
+
