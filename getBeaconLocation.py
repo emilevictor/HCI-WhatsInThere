@@ -1,16 +1,16 @@
 from mod_python import apache
 import random
 import simplejson
+import processMapURL as m
 
-class room():
-	room = None
-	buld = None
-
-def handler(req):
+def getRoom(req,btaddr=None):
 	req.content_type="application/json"
 	req.send_http_header()
-	a = room()
-	a.buld = random.randint(1,100)
-	a.room = random.randint(1,8)*100 + random.randint(1,50)
-	req.write("'{'buld':%s,'room':%s}'"%(a.buld, a.room))
-	return apache.OK
+	buld = random.randint(1,100)
+	room = random.randint(1,8)*100 + random.randint(1,50)
+	req.write("'{'buld':%s,'room':%s}'"%(buld, room))
+
+def getImage(req,buld=1):
+	req.content_type="text/plain"
+	req.send_http_header()
+	return m.getImage(m.getZoomedPage(m.findBuildingMapPage(buld)))
