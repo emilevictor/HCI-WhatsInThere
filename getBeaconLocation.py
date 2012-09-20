@@ -11,6 +11,6 @@ def getRoom(req,btaddr=None):
 	req.write("'{'buld':%s,'room':%s}'"%(buld, room))
 
 def getImage(req,buld=1):
-	req.content_type="text/plain"
+	req.content_type="image/png"
 	req.send_http_header()
-	return m.getImage(m.getZoomedPage(m.findBuildingMapPage(buld)))
+	return m.getBuldImage(int(buld))
