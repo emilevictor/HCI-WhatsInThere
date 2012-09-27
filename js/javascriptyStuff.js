@@ -25,21 +25,31 @@ $(document).ready(function()
 		})
 	}
 
-	$.getJSON('/py/getBeaconLocation.py/getRoom', function(data)
-	{
-
-		console.log(data);
-		gData = data
-
+	$.ajax({
+		url: "/py/getBeaconLocation.py/getRoom",
+		dataType: "json",
+		type: "GET",
+		success: function(data) {
+			gData = data;
+			$("#iThinkYouAreIn").append("I think you are in room " + gData.buld + "-" + gData.room);	
+			$("#iStillThinkText").append("I still think you're in building "+ gData.buld);
+			},
+		error: function(a,b) {
+			console.log(a)
+			console.log(b)
+		}
 	});
-
 
 
 	$("#amIWrongText").click(function() {
 		$("#beaconFoundFirstGuessPanel").fadeOut('slow');
-
 		$("#wrongRoomMenuPanel").fadeIn("slow");
 		
+	});
+
+	$("#sureLetsFindRightRoom").click(function() {
+		$("#wrongRoomMenuPanel").fadeOut('slow');
+		$("#changeRoomPanel").fadeIn('slow');
 	});
 
 
