@@ -6,6 +6,8 @@ import sqlite3
 import datetime
 import os
 import logging
+import re
+
 #path = '/home/michael/HCI-WhatsInThere/generateDatasource'
 path = os.path.dirname(__file__)
 offset = datetime.timedelta(days=-7)
