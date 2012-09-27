@@ -6,14 +6,15 @@ import sqlite3
 import datetime
 import os
 import logging
-
+#path = '/home/michael/HCI-WhatsInThere/generateDatasource'
+path = os.path.realpath(__file__)
 offset = datetime.timedelta(days=-7)
 
 def getRoom(req,btaddr=None):
 	req.content_type="application/json" # ;charset=UTF8 "
 	req.send_http_header()
 	
-	conn = sqlite3.connect('/home/michael/HCI-WhatsInThere/generateDatasource/rota.db')
+	conn = sqlite3.connect(path +'/rota.db')
 	c = conn.cursor()
 	c.execute('''SELECT building, room, session FROM class WHERE start > ? AND start < ?''',(
 		datetime.date.today() + offset,
@@ -44,7 +45,7 @@ def getClasses(req,buld=None,room=None):
 	req.send_http_header()
 	if buld is None or room is None:
 		return "classypengins = null;"
-	conn = sqlite3.connect('/home/michael/HCI-WhatsInThere/generateDatasource/rota.db')
+	conn = sqlite3.connect(path+'/rota.db')
 	c = conn.cursor()
 	c.execute('''SELECT session, start, stop FROM class WHERE building=? AND room=? AND start > ? AND start < ?''',(
 		buld,
