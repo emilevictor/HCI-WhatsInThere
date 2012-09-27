@@ -7,13 +7,12 @@ import datetime
 import os
 import logging
 #path = '/home/michael/HCI-WhatsInThere/generateDatasource'
-path = os.path.realpath(__file__)
+path = os.path.dirname(__file__)
 offset = datetime.timedelta(days=-7)
 
 def getRoom(req,btaddr=None):
 	req.content_type="application/json" # ;charset=UTF8 "
 	req.send_http_header()
-	
 	conn = sqlite3.connect(path +'/rota.db')
 	c = conn.cursor()
 	c.execute('''SELECT building, room, session FROM class WHERE start > ? AND start < ?''',(
