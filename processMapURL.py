@@ -11,7 +11,7 @@ def findBuildingMapPage(number):
 
 	result ={}
 	for i in m:
-		rematch = re.findall('index\.html[^"]*|[0-9]*[A]*<br />',i)
+		rematch = re.findall('index\.html[^"]*|[0-9]*[A-Z]*<br />',i)
 		result[rematch[1].strip("<br />")] = rematch[0]
 	return result[number]
 
