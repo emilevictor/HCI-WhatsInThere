@@ -25,6 +25,7 @@
 	left:33px;
 	height:312px;
 	width:254px;
+	overflow:none;
 }
 
 
@@ -55,7 +56,6 @@
 	left:2px;
 	height:312px;
 	width:254px;
-	visibility:hidden;
 	z-index:4;
 }
 
@@ -106,4 +106,12 @@
 	width:220px;
 	height:2px;
 	background-color:red;
+}
+
+#sorryIGotItWrong
+{
+	position: absolute;
+	top:900px;
+	left:200px;
+	z-index:22;
 }
