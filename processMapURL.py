@@ -8,6 +8,15 @@ import urllib
 def findBuildingMapPage(number):
 	if number =='79':
 		return 'index.html?menu=1&id=277'
+	elif number =='82F':
+		return 'index.html?menu=1&id=296'
+	elif re.match('^82[A-Z]$',number) is not None:
+		return 'index.html?menu=1&id=37'
+	elif number =='CP1':
+		number = '1'
+
+	number = re.sub("^[0 ]+","",number)
+
 	n = urllib2.urlopen("http://www.uq.edu.au/maps/mapindex.html?alpha=ALL&menu=1")
 	m = re.findall('<a class="mapindex-links" href="[^"\n]*">[^<\n]*</a>[^<\n]*<br />',n.read())
 	

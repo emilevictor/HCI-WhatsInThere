@@ -24,7 +24,8 @@ def getRoom(req,btaddr=None):
 	index = random.randint(0,len(res)-1)
 	result = {}
 	result['buld'] = res[index][0]
-	result['room'] = res[index][1]
+	result['room'] = int(re.sub("[a-zA-Z]","",res[index][1]))
+	result['fullroom']=res[index][1]
 
 	c.execute('''SELECT offering FROM classCourse WHERE session=?''',(res[index][2],))
 	offer = c.fetchall()
