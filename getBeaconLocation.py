@@ -47,7 +47,7 @@ def getClasses(req,buld=None,room=None):
 	req.send_http_header()
 	if buld is None or room is None:
 		return "classypengins = null;"
-	buld = re.sub("^[0 ]+","",buil)
+	buld = re.sub("^[0 ]+","",buld)
 	room = re.sub("^[0 ]+","",room)
 	conn = sqlite3.connect(path+'/rota.db')
 	c = conn.cursor()
