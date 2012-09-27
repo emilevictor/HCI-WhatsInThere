@@ -27,7 +27,7 @@ $(document).ready(function()
 
 	$.getJSON('/py/getBeaconLocation.py/getRoom', function(data)
 	{
-
+		console.log("Hi!")
 		console.log(data);
 		gData = data
 
