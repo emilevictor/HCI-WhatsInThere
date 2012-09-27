@@ -44,6 +44,8 @@ def getClasses(req,buld=None,room=None):
 	req.send_http_header()
 	if buld is None or room is None:
 		return "classypengins = null;"
+	buld = re.sub("^[0 ]+","",buil)
+	room = re.sub("^[0 ]+","",room)
 	conn = sqlite3.connect(path+'/rota.db')
 	c = conn.cursor()
 	c.execute('''SELECT session, start, stop FROM class WHERE building=? AND room=? AND start > ? AND start < ?''',(
