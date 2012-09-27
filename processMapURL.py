@@ -6,9 +6,11 @@ import httplib
 import urllib
 
 def findBuildingMapPage(number):
+	if number =='79':
+		return 'index.html?menu=1&id=277'
 	n = urllib2.urlopen("http://www.uq.edu.au/maps/mapindex.html?alpha=ALL&menu=1")
 	m = re.findall('<a class="mapindex-links" href="[^"\n]*">[^<\n]*</a>[^<\n]*<br />',n.read())
-
+	
 	result ={}
 	for i in m:
 		rematch = re.findall('index\.html[^"]*|[0-9]*[A-Z]*<br />',i)
