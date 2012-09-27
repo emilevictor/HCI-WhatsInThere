@@ -11,9 +11,9 @@ def findBuildingMapPage(number):
 
 	result ={}
 	for i in m:
-		rematch = re.findall('index\.html[^"]*|[0-9]*<br />',i)
+		rematch = re.findall('index\.html[^"]*|[0-9]*[A]*<br />',i)
 		result[rematch[1].strip("<br />")] = rematch[0]
-	return result[repr(number)]
+	return result[number]
 
 def getZoomedPage(url):
 	n = urllib2.urlopen("http://www.uq.edu.au/maps/"+url)

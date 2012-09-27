@@ -13,4 +13,4 @@ def getRoom(req,btaddr=None):
 def getImage(req,buld=1):
 	req.content_type="image/png"
 	req.send_http_header()
-	return m.getBuldImage(int(buld))
+	return m.getBuldImage(buld)
