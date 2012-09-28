@@ -8,6 +8,7 @@ $(document).ready(function()
 {
 	$("#wrongRoomMenuPanel").hide()
 	$("#changeRoomPanel").hide();
+	$("#manualBuildingEntry").hide();
 	var currentPanel = "beaconFoundFirstGuessPanel"
 
 	if (currentPanel == "beaconFoundFirstGuessPanel")
@@ -53,13 +54,21 @@ $(document).ready(function()
 	});
 
 	$("#sureLetsFindRightRoom").click(function() {
-
+		$("#buildingImage").html("");
 		$("#buildingImage").append("<img src=\"http://emilevictor.com/py/getBeaconLocation.py/getImage?buld="+gData.buld+"\" width=\"109\">");
 		$("#roomNumber").html(gData.room);
 		$("#wrongRoomMenuPanel").fadeOut('slow');
 		$("#changeRoomPanel").fadeIn('slow');
 		$("#changeRoomPanel").show();
+		$("#wrongRoomMenuPanel").hide();
 		console.log("This bloody thing should be showing up.");
+	});
+
+	$("#manualEnterButton").click(function() {
+		$("#changeRoomPanel").fadeOut('slow')
+		getRoomContents()
+		$("#beaconFoundFirstGuessPanel").fadeIn('slow');
+
 	});
 
 	$("#upArrow").click(function() {
@@ -124,6 +133,7 @@ function parseDate(dateString)
 
 function addClasses(data)
 {
+	$("#calendarDivForClasses").html("");
 	if (data.length > 0)
 	{
 		for (var i = 0; i < data.length; i++)
@@ -131,8 +141,8 @@ function addClasses(data)
 			var startTime = parseDate(data[i].start)
 			var finishTime = parseDate(data[i].finish)
 			var lengthOfClass = (((finishTime.getHours() - startTime.getHours()) + 1)*24)-10
-			var distanceFromTop = 114+((startTime.getHours()-8)*24)
-			$("#calendarDivForClasses").append("<div class=\"individualClasses\" style=\"border-radius:4px;border-width:2px;border-color:black;border-style:solid;width: 178px; height:"+lengthOfClass+"px;position:absolute;left:70px;padding:4px;background-color:white;color:black;top:"+distanceFromTop+"px;\">"+data[i].class+"</div>");
+			var distanceFromTop = 20+((startTime.getHours()-8)*24)
+			$("#calendarDivForClasses").append("<div class=\"individualClasses\" style=\"border-radius:4px;border-width:2px;border-color:black;border-style:solid;width: 166px; height:"+lengthOfClass+"px;position:absolute;padding:4px;background-color:white;color:black;top:"+distanceFromTop+"px;\">"+data[i].class+"</div>");
 		}
 	}
 	

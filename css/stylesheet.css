@@ -255,3 +255,20 @@
 	left:76px;
 	overflow:hidden;
 }
+
+/**
+* Manual building entry
+*/
+
+#manualBuildingEntry
+{
+	
+	position:absolute;
+	top:0px;
+	left:2px;
+	height:312px;
+	width:254px;
+	z-index:2;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: white;
+}
