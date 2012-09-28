@@ -127,7 +127,7 @@ function addClasses(data)
 	{
 		var startTime = parseDate(data[i].start)
 		var finishTime = parseDate(data[i].finish)
-		console.log(startDate.getHour)
+		console.log(startTime.getHour)
 	}
 }
 
