@@ -71,6 +71,11 @@ $(document).ready(function()
 
 	});
 
+	$("#nopeEnterManually".click(function() {
+		$("#wrongRoomMenuPanel").fadeOut('slow');
+		$("#manualBuildingEntry").fadeIn('slow');
+	});
+
 	$("#upArrow").click(function() {
 		if (gData.room < 600)
 		{
