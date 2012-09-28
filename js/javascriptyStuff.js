@@ -1,10 +1,12 @@
 var gTime = new Date()
 var gData = null
+var classData = null
 //var gData = null
 
 $(document).ready(function()
 {
 	$("#wrongRoomMenuPanel").hide()
+	$("#changeRoomPanel").hide();
 	var currentPanel = "beaconFoundFirstGuessPanel"
 
 	if (currentPanel == "beaconFoundFirstGuessPanel")
@@ -33,6 +35,8 @@ $(document).ready(function()
 			gData = data;
 			$("#iThinkYouAreIn").append("I think you are in room " + gData.buld + "-" + gData.room);	
 			$("#iStillThinkText").append("I still think you're in building "+ gData.buld);
+			getRoomContents()
+
 			},
 		error: function(a,b) {
 			console.log(a)
@@ -48,14 +52,65 @@ $(document).ready(function()
 	});
 
 	$("#sureLetsFindRightRoom").click(function() {
+
+		$("#buildingImage").append("<img src=\"http://emilevictor.com/py/getBeaconLocation.py/getImage?buld="+gData.buld+"\" width=\"109\">");
+		$("#roomNumber").html(gData.room);
 		$("#wrongRoomMenuPanel").fadeOut('slow');
 		$("#changeRoomPanel").fadeIn('slow');
+		$("#changeRoomPanel").show();
+		console.log("This bloody thing should be showing up.");
 	});
+
+	$("#upArrow").click(function() {
+		if (gData.room < 600)
+		{
+			gData.room += 100
+		}
+		
+		$("#roomNumber").html(gData.room);
+	});
+
+	$("#downArrow").click(function() {
+		if (gData.room >= 200)
+		{
+			gData.room -= 100
+		}
+		$("#roomNumber").html(gData.room);
+	});
+
+	$("#rightArrow").click(function() {
+		gData.room += 1
+		$("#roomNumber").html(gData.room);
+	});
+
+	$("#leftArrow").click(function() {
+		if (!(gData.room % 100) == 0)
+		{
+			gData.room -= 1
+		}
+		$("#roomNumber").html(gData.room);
+
+	});
+
 
 
 });
 
-function doStuffWithJSONData()
+function getRoomContents()
 {
-	console.log("Huh")
+	$.ajax({
+			url: "/py/getBeaconLocation.py/getClasses?buld="+gData.buld+"&room="+gData.room,
+			dataType: "json",
+			type: "GET",
+			success: function(data) {
+				classData = data;
+				
+
+				},
+			error: function(a,b) {
+				console.log(a)
+				console.log(b)
+			}
+		});
 }
+
