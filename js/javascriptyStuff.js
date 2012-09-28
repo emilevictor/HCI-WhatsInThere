@@ -114,3 +114,20 @@ function getRoomContents()
 		});
 }
 
+function parseDate(dateString)
+{
+	//2012-09-21 12:00:00
+
+	return new Date(Date.parse(dateString + ' AEST'));
+}
+
+function addClasses(data)
+{
+	for (var i = 0; i < data.length; i++)
+	{
+		var startTime = parseDate(data[i].start)
+		var finishTime = parseDate(data[i].finish)
+		console.log(startDate.getHour)
+	}
+}
+
