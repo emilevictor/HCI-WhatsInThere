@@ -104,9 +104,9 @@ function getRoomContents()
 			type: "GET",
 			success: function(data) {
 				classData = data;
-				
+				addClasses(data)
 
-				},
+			},
 			error: function(a,b) {
 				console.log(a)
 				console.log(b)
