@@ -81,6 +81,7 @@ $(document).ready(function()
 		gData.buld = $("#buldNo").val()
 		$("#manualBuildingEntry").fadeOut('slow');
 		getRoomContents()
+		$("#iThinkYouAreIn").append("I think you are in room " + gData.buld + "-" + gData.room);	
 		$("#beaconFoundFirstGuessPanel").fadeIn('slow');
 	});
 
