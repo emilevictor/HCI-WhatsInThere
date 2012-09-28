@@ -124,12 +124,16 @@ function parseDate(dateString)
 
 function addClasses(data)
 {
-	for (var i = 0; i < data.length; i++)
+	if (data.length > 0)
 	{
-		var startTime = parseDate(data[i].start)
-		var finishTime = parseDate(data[i].finish)
-		gDebugTime = parseDate(data[i].start)
-		console.log(startTime.getHour)
+		for (var i = 0; i < data.length; i++)
+		{
+			var startTime = parseDate(data[i].start)
+			var finishTime = parseDate(data[i].finish)
+			gDebugTime = parseDate(data[i].start)
+			console.log(startTime.getHour)
+		}
 	}
+	
 }
 
