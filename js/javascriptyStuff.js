@@ -130,8 +130,9 @@ function addClasses(data)
 		{
 			var startTime = parseDate(data[i].start)
 			var finishTime = parseDate(data[i].finish)
-			gDebugTime = parseDate(data[i].start)
-			console.log(startTime.getHour)
+			var lengthOfClass = (((finishTime.getHours() - startTime.getHours()) + 1)*24)-10
+			var distanceFromTop = 114+((startTime.getHours()-8)*24)
+			$("#calendarDivForClasses").append("<div class=\"individualClasses\" style=\"border-radius:4px;border-width:2px;border-color:black;border-style:solid;width: 178px; height:"+lengthOfClass+"px;position:absolute;left:70px;padding:4px;background-color:white;color:black;top:"+distanceFromTop+"px;\">"+data[i].class+"</div>");
 		}
 	}
 	
