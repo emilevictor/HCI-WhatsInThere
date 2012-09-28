@@ -76,6 +76,14 @@ $(document).ready(function()
 		$("#manualBuildingEntry").fadeIn('slow');
 	});
 
+	$("#changeRoomButton").click(function() {
+		gData.room = $("#roomNo").val()
+		gData.buld = $("#buldNo").val()
+		$("#manualBuildingEntry").fadeOut('slow');
+		getRoomContents()
+		$("#beaconFoundFirstGuessPanel").fadeIn('slow');
+	});
+
 	$("#upArrow").click(function() {
 		if (gData.room < 600)
 		{
