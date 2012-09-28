@@ -249,6 +249,8 @@
 #calendarDivForClasses
 {
 	position:absolute;
+	width:400px;
+	height:400px;
 	top:100px;
 	left:100px;
 	overflow:hidden;
