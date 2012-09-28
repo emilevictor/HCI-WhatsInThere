@@ -67,6 +67,8 @@ $(document).ready(function()
 	$("#manualEnterButton").click(function() {
 		$("#changeRoomPanel").fadeOut('slow')
 		getRoomContents()
+		$("#iThinkYouAreIn").html("");
+		$("#iThinkYouAreIn").append("You chose " + gData.buld + "-" + gData.room);
 		$("#beaconFoundFirstGuessPanel").fadeIn('slow');
 
 	});
@@ -82,7 +84,7 @@ $(document).ready(function()
 		$("#manualBuildingEntry").fadeOut('slow');
 		getRoomContents()
 		$("#iThinkYouAreIn").html("");
-		$("#iThinkYouAreIn").append("I think you are in room " + gData.buld + "-" + gData.room);	
+		$("#iThinkYouAreIn").append("You chose " + gData.buld + "-" + gData.room);	
 		$("#beaconFoundFirstGuessPanel").fadeIn('slow');
 	});
 
