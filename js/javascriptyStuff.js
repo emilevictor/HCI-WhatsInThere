@@ -79,8 +79,8 @@ $(document).ready(function()
 	});
 
 	$("#changeRoomButton").click(function() {
-		gData.room = $("#roomNo").val()
-		gData.buld = $("#buldNo").val()
+		gData.room = parseInt($("#roomNo").val())
+		gData.buld = parseInt($("#buldNo").val())
 		$("#manualBuildingEntry").fadeOut('slow');
 		getRoomContents()
 		$("#iThinkYouAreIn").html("");
