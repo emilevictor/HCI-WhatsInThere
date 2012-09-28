@@ -1,6 +1,7 @@
 var gTime = new Date()
 var gData = null
 var classData = null
+var gDebugTime = null
 //var gData = null
 
 $(document).ready(function()
@@ -127,6 +128,7 @@ function addClasses(data)
 	{
 		var startTime = parseDate(data[i].start)
 		var finishTime = parseDate(data[i].finish)
+		gDebugTime = parseDate(data[i].start)
 		console.log(startTime.getHour)
 	}
 }
