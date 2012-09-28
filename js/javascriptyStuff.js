@@ -71,7 +71,7 @@ $(document).ready(function()
 
 	});
 
-	$("#nopeEnterManually".click(function() {
+	$("#nopeEnterManually").click(function() {
 		$("#wrongRoomMenuPanel").fadeOut('slow');
 		$("#manualBuildingEntry").fadeIn('slow');
 	});
