@@ -49,6 +49,8 @@ $(document).ready(function()
 
 	$("#amIWrongText").click(function() {
 		$("#beaconFoundFirstGuessPanel").fadeOut('slow');
+		//need to change the header image to crying platypus.
+		$("#header").css('background-image','url("images/header_sad.png")');
 		$("#wrongRoomMenuPanel").fadeIn("slow");
 		
 	});
