@@ -7,7 +7,7 @@ var gDebugTime = null
 $(document).ready(function()
 {
 
-	$("#phone").hide();
+	$("#phonePage").hide();
 	$("#wrongRoomMenuPanel").hide()
 	$("#changeRoomPanel").hide();
 	$("#manualBuildingEntry").hide();
@@ -50,7 +50,7 @@ $(document).ready(function()
 
 	$("#continueButton").click(function() {
 		$("#firstPage").fadeOut("slow");
-		$("#phone").fadeIn("slow");
+		$("#phonePage").fadeIn("slow");
 	})
 
 
