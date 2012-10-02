@@ -6,6 +6,8 @@ var gDebugTime = null
 
 $(document).ready(function()
 {
+
+	$("#phone").hide();
 	$("#wrongRoomMenuPanel").hide()
 	$("#changeRoomPanel").hide();
 	$("#manualBuildingEntry").hide();
@@ -45,6 +47,11 @@ $(document).ready(function()
 			console.log(b)
 		}
 	});
+
+	$("#continueButton").click(function() {
+		$("#firstPage").fadeOut("slow");
+		$("#phone").fadeIn("slow");
+	})
 
 
 	$("#amIWrongText").click(function() {
