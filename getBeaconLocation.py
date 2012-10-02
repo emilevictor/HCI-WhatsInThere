@@ -10,7 +10,7 @@ import re
 
 #path = '/home/michael/HCI-WhatsInThere/generateDatasource'
 path = os.path.dirname(__file__)
-offset = datetime.timedelta(days=-7)
+offset = datetime.timedelta(days=0)
 
 def getRoom(req,btaddr=None):
 	req.content_type="application/json" # ;charset=UTF8 "
