@@ -55,6 +55,8 @@ $(document).ready(function()
 		
 	});
 
+
+	//Wrong room page
 	$("#sureLetsFindRightRoom").click(function() {
 		$("#buildingImage").html("");
 		$("#buildingImage").append("<img src=\"http://emilevictor.com/py/getBeaconLocation.py/getImage?buld="+gData.buld+"\" width=\"109\">");
@@ -66,18 +68,19 @@ $(document).ready(function()
 		console.log("This bloody thing should be showing up.");
 	});
 
+	$("#nopeEnterManually").click(function() {
+		$("#wrongRoomMenuPanel").fadeOut('slow');
+		$("#manualBuildingEntry").fadeIn('slow');
+	});
+
 	$("#manualEnterButton").click(function() {
 		$("#changeRoomPanel").fadeOut('slow')
 		getRoomContents()
 		$("#iThinkYouAreIn").html("");
 		$("#iThinkYouAreIn").append("You chose " + gData.buld + "-" + gData.room);
+		$("#header").css('background-image','url("images/header_happy.png")');
 		$("#beaconFoundFirstGuessPanel").fadeIn('slow');
 
-	});
-
-	$("#nopeEnterManually").click(function() {
-		$("#wrongRoomMenuPanel").fadeOut('slow');
-		$("#manualBuildingEntry").fadeIn('slow');
 	});
 
 	$("#changeRoomButton").click(function() {
@@ -86,7 +89,8 @@ $(document).ready(function()
 		$("#manualBuildingEntry").fadeOut('slow');
 		getRoomContents()
 		$("#iThinkYouAreIn").html("");
-		$("#iThinkYouAreIn").append("You chose " + gData.buld + "-" + gData.room);	
+		$("#iThinkYouAreIn").append("You chose " + gData.buld + "-" + gData.room);
+		$("#header").css('background-image','url("images/header_happy.png")');
 		$("#beaconFoundFirstGuessPanel").fadeIn('slow');
 	});
 
