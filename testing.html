@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>What's in there?</title>
+	<LINK href="css/stylesheet.css" rel="stylesheet" type="text/css">
+
+	 <script src="js/jquery-1.8.1.min.js"></script>
+
+	 <script src="js/javascriptyStuff.js"></script>
+	 <script src="js/testframe.js"></script>
+
+	 <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+	 <script type="text/javascript">
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-35161171-1']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
+	</script>
+
+</head>
+	
+<body>
+
+	<div id="firstPage">
+	<p>You are looking at an experimental version of a mobile application designed for a final year IT subject. In reality, this mobile applicaiton will be able to locate you and suggest a room that you may be near. In this prototype, it will just choose a random room on campus.</p>
+
+	<p>You can use this prototype to enter any room on campus and check which classes will be in that room today. It actually works pretty well, at least for something that we came up with in our spare time.</p>
+
+	<p>Please keep in mind that it is a prototype, so its quality is going to be pretty low.</p>
+
+	<h4>Select a test case:</h4>
+	<button onclick="initTestCase(1,'7','204','204')">Test Case 1</button>&nbsp;&nbsp;
+	<button onclick="initTestCase(2,'42','123','123')">Test Case 2</button>&nbsp;&nbsp;
+	<button onclick="initTestCase(3,'47','210','210')">Test Case 3</button>&nbsp;&nbsp;
+	<button onclick="initTestCase(4,'47A','141','141')">Test Case 4</button>
+	<div id="case1instructions" style="display: none; ">
+	<h4>Instructions</h4>
+	You want to know what classes are being taught in Building 7 Room 207. Find the information for the correct room.
+	</div>
+	<div id="case2instructions" style="display: none; ">
+	<h4>Instructions</h4>
+	You're in Prentice (42). You have a class in 78-109 later that day. Find out if you can stay after the class to keep working.
+	</div>
+	<div id="case3instructions" style="display: none; ">
+	<h4>Instructions</h4>
+	The application has detected that you're in 47-210 but you're actually in 47-104. Find the information for the room you're in.
+	</div>
+	<div id="case4instructions" style="display: none; ">
+	<h4>Instructions</h4>
+	Look for information on room 67-343.
+	</div>
+	<br />
+	<br />
+	<button id="continueButton" style="display: none; ">Click here to start test</button>
+	<button id="starttest" style="display: none; ">Click here to start test</button>
+	</div>
+	<div id="phonePage">
+	<button id="doneButton" onclick="endTest(true)">I'm done</button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="giveupButton" onclick="endTest(false)">I give up</button>
+		<p>In return for this service, <b><a href="survey.html">please complete this survey for us, as it is a part of our assessment.</a></b></p>
+
+		<div id="phone">
+
+				
+
+			<div id="header">
+
+
+
+			</div>
+
+			<div id="contentPane">
+				<div id="beaconFoundFirstGuessPanel">
+						<p id="iThinkYouAreIn">
+
+						</p>
+						<div id="amIWrongButton">
+							<p id="amIWrongText">
+								Am I wrong?
+							</p>
+						</div>
+
+						<div id="timeIndicator"></div>
+						
+						<div id="calendarDivForClasses"></div>
+
+
+
+				</div>
+
+				<div id="changeRoomPanel">
+					<p id="buildingNumber"></p>
+					<div id="manualEnterButton">
+						<p id="manualRoomEntryButtonText">
+							See classes in the selected room	
+						</p>
+					</div>
+					<div id="buildingImage"></div>
+					<h2 id="roomNumber"></h2>
+					<div id="upArrow"></div>
+					<div id="downArrow"></div>
+					<div id="leftArrow"></div>
+					<div id="rightArrow"></div>
+				</div>
+
+				<div id="informationForIndivClassPanel">
+
+				</div>
+
+				<div id="wrongRoomMenuPanel">
+					<p id="sorryIGotItWrong">
+						Sorry I got it wrong...
+					</p>
+
+					<p id="iStillThinkText">
+												
+					</p>
+
+					<div id="sureLetsFindRightRoom">
+					
+						<p class="wrongRoomMenuButtonText">
+							Sure. Let's find the right room.
+						</p>					
+
+					</div>
+					<div id="nopeEnterManually">
+
+	                                        <p class="wrongRoomMenuButtonText">                                                           Nope. Let me enter my location manually. 
+	                                        </p>
+					</div>
+				</div>
+
+				<div id="manualBuildingEntry">
+					Building: <input type="text" id="buldNo" placeholder="e.g. 78" />
+					<br />Room: <input type="text" id="roomNo" placeholder="e.g. 122" /><br />
+					<button id="changeRoomButton" type="button">Change Room</button>
+				</div>
+
+
+
+			</div>
+
+
+
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+setTimeout(function(){var a=document.createElement("script");
+var b=document.getElementsByTagName("script")[0];
+a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0013/3417.js?"+Math.floor(new Date().getTime()/3600000);
+a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+</script>
+
+
+</body>
+
+
+</html>

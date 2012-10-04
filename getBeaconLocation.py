@@ -72,3 +72,20 @@ def getClasses(req,buld=None,room=None):
 		sessiondict['finish']=r[2]
 		sessions.append(sessiondict)
 	return simplejson.dumps(sessions)
+
+def addTiming(req,test=None,time=None,success=None):
+	req.content_type="application/json"
+        req.send_http_header()
+	if time is None or success is None or test is None:
+		req.status = apache.HTTP_INTERNAL_SERVER_ERROR 
+		raise apache.HTTP_SERVER_RETURN, apache.DONE
+	conn = sqlite3.connect(path+'/timing.db')
+	c = conn.cursor()
+	if success=="true":
+		c.execute('''INSERT INTO timing VALUES (?,?,?,?)''',(datetime.datetime.now(), int(test), int(time),True))
+	else:
+		c.execute('''INSERT INTO timing VALUES (?,?,?,?)''',(datetime.datetime.now(), int(test), int(time), False))
+	conn.commit()
+	c.close()
+	return '{"status":"success"}'
+		
